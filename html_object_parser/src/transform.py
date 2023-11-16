@@ -1,6 +1,7 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
 import re
+import datetime
 import transform as tf
 import tkinter as tk
 from tkinter import scrolledtext
@@ -8,9 +9,11 @@ from tkinter import filedialog
 from tkinter import ttk
 # # Заменить значения в кавычках (day, month, year), если нужно
 def prepare_data(textWindow, sfile):
-    day = "27"
-    month = "07"
-    year = "2023"
+    current_time = datetime.datetime.now()
+
+    day = current_time.day;
+    month = current_time.month;
+    year = current_time.year;
 
     # remove tags
     with open("data/inter.txt", "w", encoding="utf-8") as ifile:
@@ -32,10 +35,10 @@ def prepare_data(textWindow, sfile):
     part_3 = "\",\"dataN\":\""
     part_4 = "\"}"
 
-    # dataNi = "20230425"
-    dataNi = year + month + day
-    # dataN = "2023-04-25"
-    dataN = year + '-' + month + '-' + day
+    # dataNi example: "20230425"
+    dataNi = str(year) + str(month) + str(day)
+    # dataN example: "2023-04-25"
+    dataN = str(year) + '-' + str(month) + '-' + str(day)
     # no ',' before first json structure
     is_first = True
     code = 1

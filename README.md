@@ -26,3 +26,14 @@
 <img src='html_object_parser/img/output_json.png'><br>
 4. Для очистки экрана приложения необходимо нажать <span style="color: #00FF7F;">Clear Text Window</span>. В противном случае, при очередном запуске (выборе файла), данные будут добавлены к результату предыдущих запусков
 </details>
+
+## Build .EXE
+> Для удобства использования можно собрать исполняемый файл
+
+> [!IMPORTANT]
+> После сборки переместить .exe файл из директории dist в корневую директорию микропроекта html_object_parser
+
+```
+pip install pyinstaller
+pyinstaller --noconsole --onefile src/main.py
+```
